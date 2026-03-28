@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google Fonts: Lora (Serif) y Lato (Sans-Serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Entertainment News Francia</title>
+    <meta name="description" content="Explora noticias de entretenimiento de Francia - Sergio Armero Salazar">
+
+    <!-- PWA: Color del tema (Clásico y Elegante) -->
+    <meta name="theme-color" content="#1b263b">
+
+    <!-- PWA: Soporte iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="News Francia">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+    <!-- PWA: Manifiesto -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>News Entertainment Francia</h1>
+        <p class="subtitle">Explora el entretenimiento francés con The News API</p>
+
+        <div class="search">
+            <input id="searchInput" placeholder="Buscar actor, película, serie...">
+            <button onclick="searchNews()">Buscar</button>
+        </div>
+    </header>
+
+    <nav>
+        <button onclick="latestNews()">Últimas</button>
+        <button onclick="topNews()">Tendencias</button>
+        <button onclick="getSources()">Fuentes</button>
+        <button onclick="newsByDate()">Por fecha</button>
+        <button onclick="newsFrench()">Idioma Francés</button>
+        <button onclick="newsBySource('arte.tv')">Arte.tv</button>
+        <button onclick="clearResults()">Limpiar</button>
+    </nav>
+
+    <div class="filters">
+        <label for="dateInput">Filtrar por fecha publicada:</label>
+        <input type="date" id="dateInput">
+    </div>
+
+    <section id="news"></section>
+
+    <!-- Lógica principal de la aplicación -->
+    <script src="script.js"></script>
+
+    <!-- Registro del Service Worker para funcionalidad PWA offline -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("./service-worker.js")
+                    .then((reg) => console.log("Service Worker registrado:", reg.scope))
+                    .catch((err) => console.error("Error registrando SW:", err));
+            });
+        }
+    </script>
+
+    <footer>
+        <p>2026 - Sergio Armero Salazar</p>
+        <p>API suministrada por: thenewsapi.com</p>
+    </footer>
+
+</body>
+</html>

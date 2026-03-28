@@ -6,8 +6,8 @@
  * @author Sergio Armero Salazar
  */
 
-// Nombre del caché y versión para facilitar actualizaciones
-const CACHE_NAME = "news-francia-v2";
+// Nombre del caché y versión para facilitar actualizaciones (v3 fuerza la recarga de estilos)
+const CACHE_NAME = "news-francia-v3";
 
 // Lista de archivos estáticos que se almacenarán en caché
 const STATIC_ASSETS = [

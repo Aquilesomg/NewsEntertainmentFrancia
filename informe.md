@@ -42,7 +42,7 @@ Este documento detalla los 6 endpoints y consultas utilizados en el desarrollo d
 ---
 
 ## Enlace de la Aplicación
-- **URL (Surge/GitHub Pages):** [PENDIENTE DE DESPLIEGUE]
+- **URL (GitHub Pages):** [https://aquilesomg.github.io/NewsEntertainmentFrancia/](https://aquilesomg.github.io/NewsEntertainmentFrancia/)
 
 ### Manejo de Errores
 Se implementó un bloque `try-catch` en la función principal `fetchNews` que captura problemas de red o de autenticación, mostrando un mensaje descriptivo en la interfaz en lugar de fallar silenciosamente.
